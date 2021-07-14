@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Android Skills</string>
 
-    <string name="loading...">Loading...</string>
+    <string name="loading...">Loading…</string>
     <string name="wasting_time">Actually just wasting some time :)</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
