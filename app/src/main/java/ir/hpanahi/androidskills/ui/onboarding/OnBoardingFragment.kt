@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.viewpager2.widget.ViewPager2
 import ir.hpanahi.androidskills.R
+import ir.hpanahi.androidskills.ui.onboarding.screens.NameIntroFragment
 
 class OnBoardingFragment : Fragment() {
 
@@ -13,7 +15,16 @@ class OnBoardingFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_on_boarding, container, false)
+        val view = inflater.inflate(R.layout.fragment_on_boarding, container, false)
+
+        val fragments = arrayListOf<Fragment>(
+            NameIntroFragment()
+        )
+
+        val adapter = OnBoardingViewPagerAdapter(fragments, requireActivity().supportFragmentManager, lifecycle)
+
+        view.findViewById<ViewPager2>(R.id.viewpager_on_boarding_fragments).adapter = adapter
+
+        return view
     }
 }
