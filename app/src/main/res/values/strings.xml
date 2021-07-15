@@ -3,6 +3,12 @@
 
     <string name="loading...">Loading…</string>
     <string name="wasting_time">Actually just wasting some time :)</string>
+
+    <string name="title_intro_name">Hi every one</string>
+
+    <string name="next">Next ></string>
+
+    <string name="desc_intro_name">My Name is Hossein Panahi Irdemousa and i am graduated computer science student from Amirkabir University of Technology</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
