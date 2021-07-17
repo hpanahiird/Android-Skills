@@ -9,6 +9,7 @@ import androidx.viewpager2.widget.ViewPager2
 import ir.hpanahi.androidskills.R
 import ir.hpanahi.androidskills.ui.onboarding.screens.NameIntroFragment
 import ir.hpanahi.androidskills.ui.onboarding.screens.ResumeIntroFragment
+import ir.hpanahi.androidskills.ui.onboarding.screens.SkillsIntroFragment
 
 class OnBoardingFragment : Fragment() {
 
@@ -20,7 +21,8 @@ class OnBoardingFragment : Fragment() {
 
         val fragments = arrayListOf<Fragment>(
             NameIntroFragment(),
-            ResumeIntroFragment()
+            ResumeIntroFragment(),
+            SkillsIntroFragment(),
         )
 
         val adapter = OnBoardingViewPagerAdapter(fragments, requireActivity().supportFragmentManager, lifecycle)
