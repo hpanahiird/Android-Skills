@@ -19,9 +19,9 @@ class SplashFragment : Fragment() {
         // Inflate the layout for this fragment
         Handler().postDelayed({
             if (onBoardingFinished()) {
-                findNavController().navigate(R.id.action_nav_splash_to_mainFragment)
+                findNavController().navigate(R.id.action_splashFragment_to_mainFragment)
             } else {
-                findNavController().navigate(R.id.action_nav_splash_to_onBoardingFragment)
+                findNavController().navigate(R.id.action_splashFragment_to_onBoardingFragment)
             }
         }, 3000)
 
