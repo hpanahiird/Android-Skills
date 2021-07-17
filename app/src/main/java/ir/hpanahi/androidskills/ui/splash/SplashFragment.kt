@@ -1,11 +1,12 @@
 package ir.hpanahi.androidskills.ui.splash
 
+import android.content.Context
 import android.os.Bundle
 import android.os.Handler
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import ir.hpanahi.androidskills.R
 
@@ -17,10 +18,19 @@ class SplashFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         Handler().postDelayed({
-            findNavController().navigate(R.id.action_nav_splash_to_onBoardingFragment)
-        },3000)
+            if (onBoardingFinished()) {
+                findNavController().navigate(R.id.action_nav_splash_to_mainFragment)
+            } else {
+                findNavController().navigate(R.id.action_nav_splash_to_onBoardingFragment)
+            }
+        }, 3000)
 
         return inflater.inflate(R.layout.fragment_splash, container, false)
+    }
+
+    private fun onBoardingFinished(): Boolean {
+        val prefs = requireActivity().getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
+        return prefs.getBoolean("finished", false)
     }
 
 }

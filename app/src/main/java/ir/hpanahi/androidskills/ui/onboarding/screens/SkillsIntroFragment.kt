@@ -1,5 +1,6 @@
 package ir.hpanahi.androidskills.ui.onboarding.screens
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -23,6 +24,7 @@ class SkillsIntroFragment : Fragment() {
             requireActivity().findViewById<ViewPager2>(R.id.viewpager_on_boarding_fragments)
 
         view.btn_skills_intro_finish.setOnClickListener {
+            onBoardingFinished()
             findNavController().navigate(R.id.action_onBoardingFragment_to_mainFragment)
         }
 
@@ -31,6 +33,13 @@ class SkillsIntroFragment : Fragment() {
         }
 
         return view
+    }
+
+    fun onBoardingFinished() {
+        val prefs = requireActivity().getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
+        val editor = prefs.edit()
+        editor.putBoolean("finished", true)
+        editor.apply()
     }
 
 }

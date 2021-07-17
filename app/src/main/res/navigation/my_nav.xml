@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_nav_splash_to_onBoardingFragment"
             app:destination="@id/onBoardingFragment" />
+        <action
+            android:id="@+id/action_nav_splash_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/onBoardingFragment"
