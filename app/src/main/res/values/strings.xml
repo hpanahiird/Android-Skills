@@ -10,7 +10,7 @@
 
     <string name="next">Next ></string>
     <string name="back">&lt; Back</string>
-    <string name="complete">Complete</string>
+    <string name="finish">Finish</string>
 
     <string name="desc_intro_name">My Name is Hossein Panahi Irdemousa and i am graduated computer science student from Amirkabir University of Technology</string>
     <string name="desc_intro_resume">I created this application to demonstrate some of my skills that i learned in 5 years of android development.</string>
