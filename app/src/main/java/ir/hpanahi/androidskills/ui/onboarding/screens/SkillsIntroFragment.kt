@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import ir.hpanahi.androidskills.R
 import kotlinx.android.synthetic.main.fragment_skills_intro.view.*
@@ -22,7 +23,7 @@ class SkillsIntroFragment : Fragment() {
             requireActivity().findViewById<ViewPager2>(R.id.viewpager_on_boarding_fragments)
 
         view.btn_skills_intro_finish.setOnClickListener {
-//            viewPager2.currentItem = 2
+            findNavController().navigate(R.id.action_onBoardingFragment_to_mainFragment)
         }
 
         view.btn_skills_intro_back.setOnClickListener {
