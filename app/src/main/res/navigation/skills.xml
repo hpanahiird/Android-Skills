@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/skills"
+    app:startDestination="@id/skillsFragment">
+
+    <fragment
+        android:id="@+id/skillsFragment"
+        android:name="ir.hpanahi.androidskills.ui.SkillsFragment"
+        android:label="fragment_skills"
+        tools:layout="@layout/fragment_skills" />
+</navigation>
