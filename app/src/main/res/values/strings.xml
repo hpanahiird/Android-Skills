@@ -7,6 +7,9 @@
     <string name="title_intro_name">Hi every one</string>
     <string name="title_intro_resume">This app is my resume</string>
     <string name="title_intro_skills">My Android Development Skills</string>
+    <string name="title_skills">Skills</string>
+    <string name="title_media">Media</string>
+    <string name="title_profile">Profile</string>
 
     <string name="next">Next ></string>
     <string name="back">&lt; Back</string>
