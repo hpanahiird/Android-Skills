@@ -17,6 +17,7 @@ android {
         versionCode 1
         versionName "1.0"
 
+        buildConfigField("String", "PEXELS_API_KEY", "\"" + getPexelsApiKey() + "\"")
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -80,4 +81,10 @@ dependencies {
     implementation "androidx.fragment:fragment-ktx:$fragment_version"
 
 
+}
+
+def getPexelsApiKey() {
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+    return properties.getProperty("pexels_api_key")
 }
