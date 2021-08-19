@@ -4,10 +4,12 @@ buildscript {
     ext.nav_version = "2.4.0-alpha06"
     ext.room_version = "2.3.0"
     ext.hilt_version = '2.35.1'
-    ext.retrofit_version= '2.9.0'
+    ext.retrofit_version = '2.9.0'
     ext.lifecycle_version = '2.3.1'
     ext.lifecycle_extension_version = '2.2.0'
     ext.fragment_version = '1.4.0-alpha05'
+    ext.gson_version = '2.8.7'
+    ext.okhttpLoggingVersion = '4.7.2'
 
     repositories {
         google()
