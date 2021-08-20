@@ -6,7 +6,8 @@ import okhttp3.logging.HttpLoggingInterceptor.Level
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class PexelsService {
+interface PexelsService {
+
 
     companion object {
         private const val BASE_URL = "https://api.pexels.com/"
