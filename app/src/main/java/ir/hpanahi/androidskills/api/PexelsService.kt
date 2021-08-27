@@ -1,12 +1,44 @@
 package ir.hpanahi.androidskills.api
 
+import ir.hpanahi.androidskills.BuildConfig
+import ir.hpanahi.androidskills.data.models.PexelsPhoto
+import ir.hpanahi.androidskills.data.models.PexelsPhotoResult
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import okhttp3.logging.HttpLoggingInterceptor.Level
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.GET
+import retrofit2.http.Header
+import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface PexelsService {
+
+    @GET("v1/search")
+    suspend fun searchPhotos(
+        @Query("query") query: String,
+        @Query("orientation") orientation: String,
+        @Query("size") size: String,
+        @Query("color") color: String,
+        @Query("locale") locale: String,
+        @Query("page") page: Int,
+        @Query("per_page") perPage: Int,
+        @Header("Authorization") auth: String = BuildConfig.PEXELS_API_KEY
+    ): PexelsPhotoResult
+
+    @GET("v1/curated")
+    suspend fun curatedPhotos(
+        @Query("page") page: Int,
+        @Query("per_page") perPage: Int,
+        @Header("Authorization") auth: String = BuildConfig.PEXELS_API_KEY
+    ): PexelsPhotoResult
+
+    @GET("v1/photo/{id}")
+    suspend fun getPhoto(
+        @Path("id", encoded = true) id: Int,
+        @Header("Authorization") auth: String = BuildConfig.PEXELS_API_KEY
+    ): PexelsPhoto
 
 
     companion object {
