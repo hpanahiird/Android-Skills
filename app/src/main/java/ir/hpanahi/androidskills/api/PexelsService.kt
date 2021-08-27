@@ -3,6 +3,8 @@ package ir.hpanahi.androidskills.api
 import ir.hpanahi.androidskills.BuildConfig
 import ir.hpanahi.androidskills.data.models.PexelsPhoto
 import ir.hpanahi.androidskills.data.models.PexelsPhotoResult
+import ir.hpanahi.androidskills.data.models.PexelsVideo
+import ir.hpanahi.androidskills.data.models.PexelsVideoResult
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import okhttp3.logging.HttpLoggingInterceptor.Level
@@ -39,6 +41,30 @@ interface PexelsService {
         @Path("id", encoded = true) id: Int,
         @Header("Authorization") auth: String = BuildConfig.PEXELS_API_KEY
     ): PexelsPhoto
+
+    @GET("videos/search")
+    suspend fun searchVideos(
+        @Query("query") query: String,
+        @Query("orientation") orientation: String,
+        @Query("size") size: String,
+        @Query("locale") locale: String,
+        @Query("page") page: Int,
+        @Query("per_page") perPage: Int,
+        @Header("Authorization") auth: String = BuildConfig.PEXELS_API_KEY
+    ): PexelsVideoResult
+
+    @GET("videos/popular")
+    suspend fun popularVideos(
+        @Query("page") page: Int,
+        @Query("per_page") perPage: Int,
+        @Header("Authorization") auth: String = BuildConfig.PEXELS_API_KEY
+    ): PexelsVideoResult
+
+    @GET("videos/videos/{id}")
+    suspend fun getVideo(
+        @Path("id", encoded = true) id: Int,
+        @Header("Authorization") auth: String = BuildConfig.PEXELS_API_KEY
+    ): PexelsVideo
 
 
     companion object {
