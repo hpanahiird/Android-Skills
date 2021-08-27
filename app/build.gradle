@@ -17,6 +17,7 @@ android {
         versionCode 1
         versionName "1.0"
 
+        buildConfigField("String", "PEXELS_API_KEY", "\"" + getPexelsApiKey() + "\"")
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -67,6 +68,10 @@ dependencies {
     // retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttpLoggingVersion"
+
+    //gson
+    implementation "com.google.code.gson:gson:$gson_version"
 
     //lifecycle
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_extension_version"
@@ -76,4 +81,10 @@ dependencies {
     implementation "androidx.fragment:fragment-ktx:$fragment_version"
 
 
+}
+
+def getPexelsApiKey() {
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+    return properties.getProperty("pexels_api_key")
 }
