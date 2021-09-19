@@ -9,9 +9,11 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
+import dagger.hilt.android.AndroidEntryPoint
 import ir.hpanahi.androidskills.R
 import kotlinx.android.synthetic.main.fragment_main.view.*
 
+@AndroidEntryPoint
 class MainFragment : Fragment() {
 
     private lateinit var navController: NavController
