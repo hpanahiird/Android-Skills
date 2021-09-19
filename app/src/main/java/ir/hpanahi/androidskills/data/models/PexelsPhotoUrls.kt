@@ -1,12 +1,14 @@
 package ir.hpanahi.androidskills.data.models
 
+import com.google.gson.annotations.SerializedName
+
 data class PexelsPhotoUrls(
-    val original: String,
-    val large: String,
-    val large2x: String,
-    val medium: String,
-    val small: String,
-    val portrait: String,
-    val landscape: String,
-    val tiny: String
+    @field:SerializedName("original") val original: String,
+    @field:SerializedName("large") val large: String,
+    @field:SerializedName("large2x") val large2x: String,
+    @field:SerializedName("medium") val medium: String,
+    @field:SerializedName("small") val small: String,
+    @field:SerializedName("portrait") val portrait: String,
+    @field:SerializedName("landscape") val landscape: String,
+    @field:SerializedName("tiny") val tiny: String
 )

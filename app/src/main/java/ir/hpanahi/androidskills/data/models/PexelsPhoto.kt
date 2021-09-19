@@ -1,13 +1,15 @@
 package ir.hpanahi.androidskills.data.models
 
+import com.google.gson.annotations.SerializedName
+
 data class PexelsPhoto(
-    val id: Int,
-    val width: Int,
-    val height: Int,
-    val url: String,
-    val photographer: String,
-    val photographerUrl: String,
-    val photographerId: String,
-    val avgColor: String,
-    val src: PexelsPhotoUrls
+    @field:SerializedName("id") val id: Int,
+    @field:SerializedName("width") val width: Int,
+    @field:SerializedName("height") val height: Int,
+    @field:SerializedName("url") val url: String,
+    @field:SerializedName("photographer") val photographer: String,
+    @field:SerializedName("photographer_url") val photographerUrl: String,
+    @field:SerializedName("photographer_id") val photographerId: String,
+    @field:SerializedName("avg_color") val avgColor: String,
+    @field:SerializedName("src") val src: PexelsPhotoUrls
 )
