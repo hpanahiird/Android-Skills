@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.MediaFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <EditText
-        android:id="@+id/edit2"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/photo_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/title_media" />
+        android:clipToPadding="false"
+        android:paddingEnd="12dp"
+        android:paddingStart="12dp"
+        android:paddingTop="12dp"
+        app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+        app:spanCount="2"
+        tools:context="com.google.samples.apps.sunflower.GardenActivity"
+        tools:listitem="@layout/list_item_photo" />
 
-</FrameLayout>
+</layout>
